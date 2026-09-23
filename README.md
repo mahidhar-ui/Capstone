@@ -54,8 +54,7 @@ An 8-document Zepto policy corpus, embedded locally with `sentence-transformers`
 
 ## Setup
 
-> State here which you used: **one consolidated `requirements.txt`** at the repo root, or **one `requirements.txt` per module**.
-
+>This project uses **one `requirements.txt` per module** (`data_pipeline/requirements.txt`, `analytics/requirements.txt`, `support_assistant/requirements.txt`).
 ```bash
 git clone <your-repo-url>
 cd <your-repo>
@@ -90,7 +89,7 @@ jupyter nbconvert --to notebook --execute 02_modeling.ipynb
 ### 3. Support Assistant
 ```bash
 cd support_assistant
-python ingest.py                 # embeds the 8 docs into ChromaDB
+# ingestion runs automatically on FastAPI startup inside main.py — no separate script needed               # embeds the 8 docs into ChromaDB
 
 # graded baseline — MOCK_LLM defaults to mock mode:
 uvicorn main:app --host 0.0.0.0 --port 7860
