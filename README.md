@@ -105,17 +105,11 @@ docker run -p 7860:7860 zepto-support-assistant
 
 ---
 
-## Design Decisions
+**Data Pipeline:** I scraped books from [categories you used] on books.toscrape.com. Rows with missing prices or malformed ratings were [however you handled them — dropped/flagged/defaulted]. I split the schema into `categories` and `books` tables linked by a foreign key because [your reason].
 
-> Short summary per module — fill in as you build.
+**Analytics Pipeline:** I dropped/imputed columns above [your threshold]% missing. Comparing baseline vs. `class_weight='balanced'` vs. SMOTE, I found [what you actually observed]. My final recommended classifier is [Logistic Regression / Decision Tree / Random Forest] because [your reason].
 
-**Data Pipeline:** _(scraping scope chosen, malformed-row handling strategy, schema naming, etc.)_
-
-**Analytics Pipeline:** _(missing-value strategy per column, model/imbalance-handling conclusions, final classifier recommendation, etc.)_
-
-**Support Assistant:** _(chunking scheme, prompt template design, retry logic for the optional real-LLM path, etc.)_
-
----
+**Support Assistant:** I used one chunk per document because [your reason — e.g. the policy docs are short]. My prompt template does [what it does]. In the optional real-LLM path, retries are handled by [your logic, or note if you didn't implement this part].
 
 ## Submission Guidelines
 
